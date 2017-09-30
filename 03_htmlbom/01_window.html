@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window</title>
+</head>
+<body>
+<script>
+    var w=window.innerWidth
+        || document.documentElement.clientWidth
+        || document.body.clientWidth;
+
+    var h=window.innerHeight
+        || document.documentElement.clientHeight
+        || document.body.clientHeight;
+    document.write("Width="+w+"Height"+h);
+
+
+</script>
+<script type="text/javascript">
+    function resizeWindow()
+    {
+        top.resizeTo(500,300)
+    }
+</script>
+<button onclick="window.open('http://www.baidu.com')">打开百度</button>
+<button onclick="window.close()">关闭当前</button>
+<button onclick="window.moveTo(200,400)">移动到</button>
+<button onclick="resizeWindow()">把窗口缩小到</button>
+</body>
+</html>

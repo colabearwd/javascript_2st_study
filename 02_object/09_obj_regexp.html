@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--
+RegExp 对象有 3 个方法：test()、exec() 以及 compile()。
+
+test()
+test() 方法检索字符串中的指定值。返回值是 true 或 false。
+
+exec()
+exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null。
+
+compile()
+compile() 方法用于改变 RegExp。
+compile() 既可以改变检索模式，也可以添加或删除第二个参数。
+
+
+-->
+<script type="text/javascript">
+    var patt1=new RegExp("e");
+
+    document.write(patt1.test("The best things in life are free"));
+</script>
+<br>
+<script type="text/javascript">
+    var patt1=new RegExp("e");
+
+    document.write(patt1.exec("The best things in life are free"));
+</script>
+<br>
+<script type="text/javascript">
+    var patt1=new RegExp("e","g");
+
+    do
+    {
+        result=patt1.exec("The best things in life are free");
+        document.write(result);
+    }
+    while (result!=null)
+</script>
+<br>
+<script type="text/javascript">
+    var patt1=new RegExp("e");
+    document.write(patt1.test("The best things in life are free"));
+
+    patt1.compile("d");
+
+    document.write(patt1.test("The best things in life are free"));
+</script>
+
+</body>
+</html>

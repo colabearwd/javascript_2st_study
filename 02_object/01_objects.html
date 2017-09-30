@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>objects</title>
+</head>
+<body>
+<!--
+
+JavaScript 中的所有事物都是对象：字符串、数值、数组、函数...
+
+此外，JavaScript 允许自定义对象。
+-->
+<script>
+    var message="Hello World!";
+    var x=message.length;
+    document.write(x+"<br>");
+
+</script>
+<script>
+    var message="Hello world!";
+    var x=message.toUpperCase();
+    document.write(x+"<br>");
+</script>
+<!--<script>-->
+    <!--person=new Object();-->
+    <!--person.firstname="Bill";-->
+    <!--person.lastname="Gates";-->
+    <!--person.age=56;-->
+    <!--person.eyecolor="blue";-->
+
+<!--</script>-->
+<!--<script>-->
+    <!--person={firstname:"John",lastname:"Doe",age:50,eyecolor:"blue"};-->
+
+<!--</script>-->
+<!--<script>-->
+    <!--function person(firstname,lastname,age,eyecolor)-->
+    <!--{-->
+        <!--this.firstname=firstname;-->
+        <!--this.lastname=lastname;-->
+        <!--this.age=age;-->
+        <!--this.eyecolor=eyecolor;-->
+    <!--}-->
+
+    <!--var myFather1=new person("Bill","Gates",56,"blue");-->
+    <!--var myMother=new person("Steve","Jobs",48,"green");-->
+
+<!--</script>-->
+<script>
+    function person(firstname,lastname,age,eyecolor)
+    {
+        this.firstname=firstname;
+        this.lastname=lastname;
+        this.age=age;
+        this.eyecolor=eyecolor;
+
+        this.changeName=changeName;
+        function changeName(name)
+        {
+            this.lastname=name;
+        }
+    }
+    var myFather=new person("Bill","Gates",56,"blue");
+    document.write(myFather.lastname);
+    document.write("<br>");
+    myFather.changeName("hadoop");
+    document.write(myFather.lastname);
+</script>
+</body>
+</html>
